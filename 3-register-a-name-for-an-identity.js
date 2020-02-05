@@ -21,4 +21,5 @@ const registerName = async function () {
   }
 }
 
+// Tutorial page: https://dashplatform.readme.io/docs/tutorial-register-a-name-for-an-identity
 registerName();

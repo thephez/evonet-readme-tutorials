@@ -21,6 +21,8 @@ async function createWallet() {
     sdk.disconnect();
   }
 }
+
+// Tutorial page: https://dashplatform.readme.io/docs/tutorial-create-and-fund-a-wallet
 createWallet();
 
 

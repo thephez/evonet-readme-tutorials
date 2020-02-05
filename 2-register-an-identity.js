@@ -19,6 +19,7 @@ const createIdentity = async function () {
   }
 }
 
+// Tutorial page: https://dashplatform.readme.io/docs/tutorial-register-an-identity
 createIdentity()
 
 // { identity: '5eFG6cF1Z1Mu4MK5GcdvJcy4H8yzQrrrmw5yTvgBXNHm' }
