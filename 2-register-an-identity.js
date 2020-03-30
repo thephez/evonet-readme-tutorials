@@ -23,4 +23,5 @@ createIdentity()
 
 // Tutorial page: https://dashplatform.readme.io/docs/tutorial-register-an-identity
 
-// { identity: '3VoD81QEMVvKJYuALLidjz8xnBrn297nbDkEq92Y9axQ' }
+// User: { identity: '3VoD81QEMVvKJYuALLidjz8xnBrn297nbDkEq92Y9axQ' }
+// Application: { identity: 'GjtKsoRycU3kGdnS8EEM3kitU4JbTBTZ8ZCndoyi5tCP' }
