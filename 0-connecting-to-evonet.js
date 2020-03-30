@@ -17,3 +17,5 @@ async function connect() {
 }
 
 connect();
+
+// Tutorial page: https://dashplatform.readme.io/docs/tutorial-connecting-to-evonet
