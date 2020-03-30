@@ -1,25 +1,25 @@
-const DashJS = require('dash');
+const Dash = require('dash');
 
-const sdkOpts = {
+const clientOpts = {
   network: 'testnet',
-  mnemonic: 'shoe silver cloud height nominee seed invite arena goddess nephew congress near',
+  mnemonic: 'a Dash wallet mnemonic with evonet funds goes here',
 };
-const sdk = new DashJS.SDK(sdkOpts);
+const client = new Dash.Client(clientOpts);
 
 const registerName = async function () {
   try {
-    await sdk.isReady();
-    const platform = sdk.platform;
-    const identity = await platform.identities.get('5eFG6cF1Z1Mu4MK5GcdvJcy4H8yzQrrrmw5yTvgBXNHm');
-    const nameRegistration = await platform.names.register('evonet-test-9999', identity);
+    await client.isReady();
+    const platform = client.platform;
+    const identity = await platform.identities.get('an identity ID goes here');
+    const nameRegistration = await platform.names.register('a name goes here', identity);
     console.log({nameRegistration});
   } catch (e) {
     console.error('Something went wrong:', e);
-    console.dir({e}, {depth: 10})
   } finally {
-    sdk.disconnect();
+    client.disconnect();
   }
 }
 
-// Tutorial page: https://dashplatform.readme.io/docs/tutorial-register-a-name-for-an-identity
 registerName();
+
+// Tutorial page: https://dashplatform.readme.io/docs/tutorial-register-a-name-for-an-identity

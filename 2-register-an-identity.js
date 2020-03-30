@@ -1,25 +1,26 @@
-const DashJS = require('dash');
+const Dash = require('dash');
 
-const sdkOpts = {
+const clientOpts = {
   network: 'testnet',
-  mnemonic: 'shoe silver cloud height nominee seed invite arena goddess nephew congress near',
+  mnemonic: 'a Dash wallet mnemonic with evonet funds goes here',
 };
-const sdk = new DashJS.SDK(sdkOpts);
+const client = new Dash.Client(clientOpts);
 
 const createIdentity = async function () {
   try {
-    await sdk.isReady();
-    const platform = sdk.platform;
+    await client.isReady();
+    const platform = client.platform;
     const identity = await platform.identities.register('user');  // literally 'user', do not change
     console.log({identity});
   } catch (e) {
     console.error('Something went wrong:', e);
   } finally {
-    sdk.disconnect();
+    client.disconnect();
   }
 }
 
-// Tutorial page: https://dashplatform.readme.io/docs/tutorial-register-an-identity
 createIdentity()
 
-// { identity: '5eFG6cF1Z1Mu4MK5GcdvJcy4H8yzQrrrmw5yTvgBXNHm' }
+// Tutorial page: https://dashplatform.readme.io/docs/tutorial-register-an-identity
+
+// { identity: '3VoD81QEMVvKJYuALLidjz8xnBrn297nbDkEq92Y9axQ' }
