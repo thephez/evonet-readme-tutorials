@@ -24,6 +24,8 @@ async function createWallet() {
 
 createWallet();
 
+module.exports = createWallet;
+
 // Tutorial page: https://dashplatform.readme.io/docs/tutorial-create-and-fund-a-wallet
 
 // Mnemonic: shoe silver cloud height nominee seed invite arena goddess nephew congress near

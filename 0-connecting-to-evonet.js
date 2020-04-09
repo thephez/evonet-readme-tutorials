@@ -18,4 +18,6 @@ async function connect() {
 
 connect();
 
+module.exports = connect;
+
 // Tutorial page: https://dashplatform.readme.io/docs/tutorial-connecting-to-evonet

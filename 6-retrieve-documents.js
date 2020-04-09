@@ -31,4 +31,6 @@ const getDocuments = async function () {
 
 getDocuments();
 
+module.exports = getDocuments;
+
 // Tutorial page: https://dashplatform.readme.io/docs/tutorial-retrieve-documents
