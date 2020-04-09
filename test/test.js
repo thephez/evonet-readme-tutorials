@@ -21,7 +21,7 @@ describe('Tutorial Code Test', function() {
   });
 
   describe('6-retrieve-documents.js', function() {
-    it('should connect to Evonet without error', async function() {
+    it('should retrieve document(s) from Evonet without error', async function() {
       let result =  await RetrieveDocuments();
       assert.ifError(result);
     });
