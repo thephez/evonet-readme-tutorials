@@ -10,7 +10,7 @@ const createIdentity = async function () {
   try {
     await client.isReady();
     const platform = client.platform;
-    const identity = await platform.identities.register('user');  // literally 'user', do not change
+    const identity = await platform.identities.register();
     console.log({identity});
   } catch (e) {
     console.error('Something went wrong:', e);
