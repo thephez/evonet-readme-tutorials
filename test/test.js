@@ -13,7 +13,7 @@ describe('Tutorial Code Test', function() {
   });
 
   describe('1-create-and-fund-wallet.js', function() {
-    this.timeout(5000); // this test can take up to 5 seconds
+    this.timeout(10000); // this test can take > 5 seconds
     it('should create a wallet and get an unused address without error', async function() {
       let result =  await CreateAndFundWallet();
       assert.ifError(result);
