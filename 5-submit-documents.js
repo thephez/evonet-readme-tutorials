@@ -29,8 +29,11 @@ const submitNoteDocument = async function () {
       docProperties,
     );
 
+    const documentBatch = {
+      create: [noteDocument]
+    }
     // Sign and submit the document
-    await platform.documents.broadcast(noteDocument, identity);
+    await platform.documents.broadcast(documentBatch, identity);
   } catch (e) {
     console.error('Something went wrong:', e);
   } finally {
