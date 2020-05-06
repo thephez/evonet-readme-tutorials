@@ -9,21 +9,20 @@ describe('Tutorial Code Test', function() {
     it('should connect to Evonet without error', async function() {
       let result =  await ConnectToEvonet();
       assert.ifError(result);
-    });
+    }).timeout(10000);
   });
 
   describe('1-create-and-fund-wallet.js', function() {
-    this.timeout(10000); // this test can take > 5 seconds
     it('should create a wallet and get an unused address without error', async function() {
       let result =  await CreateAndFundWallet();
       assert.ifError(result);
-    });
+    }).timeout(10000);
   });
 
   describe('6-retrieve-documents.js', function() {
     it('should retrieve document(s) from Evonet without error', async function() {
       let result =  await RetrieveDocuments();
       assert.ifError(result);
-    });
+    }).timeout(10000);
   });
 });
