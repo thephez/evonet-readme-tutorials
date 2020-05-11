@@ -10,7 +10,7 @@ on:
     branches: [ master ]
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 */8 * * *'    
+    - cron:  '0 */8 * * *'
 
 jobs:
   build:
@@ -20,6 +20,8 @@ jobs:
     strategy:
       matrix:
         node-version: [10.x, 12.x]
+
+    timeout-minutes: 2
 
     steps:
     - uses: actions/checkout@v2
