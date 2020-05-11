@@ -11,7 +11,7 @@ describe('Tutorial Code Test', function() {
       assert.ifError(result);
     }).timeout(10000);
   });
-
+/*
   describe('1-create-and-fund-wallet.js', function() {
     it('should create a wallet and get an unused address without error', async function() {
       let result =  await CreateAndFundWallet();
@@ -25,4 +25,5 @@ describe('Tutorial Code Test', function() {
       assert.ifError(result);
     }).timeout(10000);
   });
+*/
 });
