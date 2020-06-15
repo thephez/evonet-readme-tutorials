@@ -2,13 +2,15 @@ const Dash = require('dash');
 
 const clientOpts = {
   network: 'testnet',
-  mnemonic: 'a Dash wallet mnemonic with evonet funds goes here',
+  wallet: {
+    mnemonic: 'a Dash wallet mnemonic with evonet funds goes here',
+  }
 };
 const client = new Dash.Client(clientOpts);
 
 const createIdentity = async function () {
   try {
-    await client.isReady();
+    //await client.isReady();
     const platform = client.platform;
     const identity = await platform.identities.register();
     console.log({identity});

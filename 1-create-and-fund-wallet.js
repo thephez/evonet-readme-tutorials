@@ -2,17 +2,21 @@ const Dash = require('dash');
 
 const clientOpts = {
   network: 'testnet',
-  mnemonic: null, // this indicates that we want a new wallet to be generated
-                  // if you want to get a new address for an existing wallet
-                  // replace 'null' with an existing wallet mnemonic
+  wallet: {
+    mnemonic: null, // this indicates that we want a new wallet to be generated
+                      // if you want to get a new address for an existing wallet
+                    // replace 'null' with an existing wallet mnemonic
+  }
 };
 const client = new Dash.Client(clientOpts);
 
 async function createWallet() {
   try {
-    await client.isReady();
+    const account = await client.wallet.getAccount();
+    await account.isReady();
+    
     const mnemonic = client.wallet.exportWallet();
-    const address = client.account.getUnusedAddress();
+    const address = account.getUnusedAddress();
     console.log('Mnemonic:', mnemonic);
     console.log('Unused address:', address.address);
   } catch (e) {
