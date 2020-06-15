@@ -3,11 +3,12 @@ const Dash = require('dash');
 const clientOpts = {
   network: 'testnet',
 };
-const client = new Dash.Client(clientOpts);
+
 
 async function connect() {
+  const client = new Dash.Client(clientOpts);
   try {
-    await client.isReady();
+    console.log(await client.getDAPIClient().getBestBlockHash())
     console.log('connected');
   } catch (e) {
     console.error('Something went wrong:', e);
