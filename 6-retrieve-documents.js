@@ -11,9 +11,7 @@ const clientOpts = {
 const client = new Dash.Client(clientOpts);
 
 const getDocuments = async function () {
-  try {
-    await client.isReady();
-
+  try {    
     const queryOpts = {
       limit: 1 // Only retrieve 1 document
     };
