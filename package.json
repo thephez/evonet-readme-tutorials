@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dash": "^3.13.2"
+    "dash": "^3.13.3"
   },
   "devDependencies": {
     "mocha": "^7.1.2"
