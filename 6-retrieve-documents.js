@@ -1,10 +1,10 @@
 const Dash = require('dash');
 
 const clientOpts = {
-  network: 'testnet',
+  network: 'evonet',
   apps: {
     tutorialContract: {
-      contractId: 'ARQGUnPH3YMK8FZuqwUjnTWEF6Zu4Cf3sT6e1Ruu1RXk'
+      contractId: '4xGhiiDR9o7VhpnW7YtLZvpWXdKByBgChZvUbri8ETJP'
     }
   }
 };

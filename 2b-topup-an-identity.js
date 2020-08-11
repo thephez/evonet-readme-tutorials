@@ -1,7 +1,7 @@
 const Dash = require('dash');
 
 const clientOpts = {
-  network: 'testnet',
+  network: 'evonet',
   wallet: {
     mnemonic: 'a Dash wallet mnemonic with evonet funds goes here',
   }
@@ -24,4 +24,4 @@ const topupIdentity = async function () {
   }
 }
 
-topupIdentity()
+topupIdentity();

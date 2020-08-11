@@ -1,15 +1,15 @@
 const Dash = require('dash');
 
 const clientOpts = {
-  network: 'testnet',
+  network: 'evonet',
   wallet: {
     mnemonic: 'a Dash wallet mnemonic with evonet funds goes here',
   },
   apps: {
     tutorialContract: {
-      contractId: 'ARQGUnPH3YMK8FZuqwUjnTWEF6Zu4Cf3sT6e1Ruu1RXk'
+      contractId: '4xGhiiDR9o7VhpnW7YtLZvpWXdKByBgChZvUbri8ETJP'
     }
-  }
+  }  
 };
 const client = new Dash.Client(clientOpts);
 
@@ -19,7 +19,7 @@ const submitNoteDocument = async function () {
   try {
     const identity = await platform.identities.get('an identity ID goes here');
 
-    docProperties = {
+    const docProperties = {
       message: 'Tutorial Test @ ' + new Date().toUTCString()
     }
 
@@ -32,10 +32,10 @@ const submitNoteDocument = async function () {
 
     const documentBatch = {
       create: [noteDocument],
-      replace: [],
-    	delete: [],
+        replace: [],
+        delete: [],
     }
-    // Sign and submit the document
+    // Sign and submit the document(s)
     await platform.documents.broadcast(documentBatch, identity);
   } catch (e) {
     console.error('Something went wrong:', e);

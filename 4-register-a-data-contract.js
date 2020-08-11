@@ -22,6 +22,7 @@ const registerContract = async function () {
         },
         additionalProperties: false
       }};
+    
     const contract = await platform.contracts.create(contractDocuments, identity);
     console.dir({contract});
 

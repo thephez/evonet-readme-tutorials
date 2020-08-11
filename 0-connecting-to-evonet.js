@@ -1,14 +1,13 @@
 const Dash = require('dash');
 
 const clientOpts = {
-  network: 'testnet',
+  network: 'evonet',
 };
-
+const client = new Dash.Client(clientOpts);
 
 async function connect() {
-  const client = new Dash.Client(clientOpts);
   try {
-    console.log(await client.getDAPIClient().getBestBlockHash())
+    console.log(await client.getDAPIClient().core.getBestBlockHash())
     console.log('connected');
   } catch (e) {
     console.error('Something went wrong:', e);
