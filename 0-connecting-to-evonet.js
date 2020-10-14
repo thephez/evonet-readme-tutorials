@@ -1,22 +1,15 @@
 const Dash = require('dash');
 
-const clientOpts = {
-  network: 'evonet',
-};
-const client = new Dash.Client(clientOpts);
+const client = new Dash.Client();
 
 async function connect() {
-  try {
-    console.log(await client.getDAPIClient().core.getBestBlockHash())
-    console.log('connected');
-  } catch (e) {
-    console.error('Something went wrong:', e);
-  } finally {
-    client.disconnect();
-  }
+  return await client.getDAPIClient().core.getBestBlockHash();
 }
 
-connect();
+connect()
+  .then(d => console.log('Connected. Best block hash:\n', d))
+	.catch(e => console.error('Something went wrong:\n', e))
+	.finally(() => client.disconnect());
 
 module.exports = connect;
 
