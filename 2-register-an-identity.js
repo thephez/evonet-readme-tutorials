@@ -8,19 +8,14 @@ const clientOpts = {
 };
 const client = new Dash.Client(clientOpts);
 
-const createIdentity = async function () {
-  try {
-    const platform = client.platform;
-    const identity = await platform.identities.register();
-    console.log({identity});
-  } catch (e) {
-    console.error('Something went wrong:', e);
-  } finally {
-    client.disconnect();
-  }
+const createIdentity = async () => {
+  return client.platform.identities.register();
 }
 
 createIdentity()
+  .then(d => console.log('Identity:\n', d.toJSON()))
+  .catch(e => console.error('Something went wrong:\n', e))
+  .finally(() => client.disconnect());
 
 // Tutorial page: https://dashplatform.readme.io/docs/tutorial-register-an-identity
 

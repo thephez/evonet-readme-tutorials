@@ -8,20 +8,15 @@ const clientOpts = {
 };
 const client = new Dash.Client(clientOpts);
 
-const topupIdentity = async function () {
-  try {
-    const identityId = 'an identity ID goes here';
-    const topUpAmount = 1000;  // Number of duffs
+const topupIdentity = async () => {
+  const identityId = 'an identity ID goes here';
+  const topUpAmount = 1000;  // Number of duffs
 
-    const platform = client.platform;
-    const status = await platform.identities.topUp(identityId, topUpAmount);
-    const identity = await platform.identities.get(identityId);
-    console.log('Identity credit balance:', identity.balance);
-  } catch (e) {
-    console.error('Something went wrong:', e);
-  } finally {
-    client.disconnect();
-  }
+  await client.platform.identities.topUp(identityId, topUpAmount);
+  return client.platform.identities.get(identityId);
 }
 
-topupIdentity();
+topupIdentity()
+  .then(d => console.log('Identity credit balance: ', d.balance))
+  .catch(e => console.error('Something went wrong:\n', e))
+  .finally(() => client.disconnect());
