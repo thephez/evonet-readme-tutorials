@@ -10,13 +10,11 @@ const clientOpts = {
 const client = new Dash.Client(clientOpts);
 
 const getDocuments = async () => {
-  const queryOpts = {
-    limit: 1 // Only retrieve 1 document
-  };
-  
   return client.platform.documents.get(
     'tutorialContract.note',
-    queryOpts
+    {
+      limit: 1 // Only retrieve 1 document
+    }
   );
 };
 
