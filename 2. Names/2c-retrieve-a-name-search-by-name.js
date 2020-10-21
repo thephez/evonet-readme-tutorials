@@ -8,6 +8,11 @@ const retrieveNameBySearch = async () => {
 }
 
 retrieveNameBySearch()
-  .then(d => console.log('Name(s) retrieved:\n', d))
+  .then(d => {
+//	console.log('Name(s) retrieved:\n', d))
+	for (const doc of d) {
+		console.log(doc.toJSON())
+	}
+})
   .catch(e => console.error('Something went wrong:\n', e))
   .finally(() => client.disconnect());
