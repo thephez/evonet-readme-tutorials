@@ -16,31 +16,17 @@ const client = new Dash.Client(clientOpts);
 const deleteNoteDocument = async function () {
   const platform = client.platform;
   const identity = await platform.identities.get('an identity ID goes here');
-  const documentId = 'an existing document ID goes here'
+  const documentId = 'an existing document ID goes here';
   
   // Retrieve the existing document
-  const documents = await client.platform.documents.get(
+  const [document] = await client.platform.documents.get(
     'tutorialContract.note',
-    {where: [['$id', '==', documentId]]}
+    { where: [['$id', '==', documentId]] }
   );
   
-  // Create updated note document
-  const noteDocument = await platform.documents.create(
-    'tutorialContract.note',
-    identity,
-    {
-      '$id': documents[0].id, // Existing document id
-      '$revision': documents[0].revision, // Existing document revision
-    },
-  );
- 
-  const documentBatch = {
-    delete: [noteDocument],
-  }
-
-  // Sign and submit the document(s)
-  return platform.documents.broadcast(documentBatch, identity);
-};
+  // Sign and submit the document delete transition
+  return platform.documents.broadcast({delete: [document]}, identity);
+}
 
 deleteNoteDocument()
   .then(d => console.log('Document deleted:\n', d))

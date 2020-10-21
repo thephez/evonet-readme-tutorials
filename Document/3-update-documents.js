@@ -16,32 +16,20 @@ const client = new Dash.Client(clientOpts);
 const updateNoteDocument = async function () {
   const platform = client.platform;
   const identity = await platform.identities.get('an identity ID goes here');
-  const documentId = 'an existing document ID goes here'
+  const documentId = 'an existing document ID goes here';
   
   // Retrieve the existing document
-  const documents = await client.platform.documents.get(
+  const [document] = await client.platform.documents.get(
     'tutorialContract.note',
-    {where: [['$id', '==', documentId]]}
+    { where: [['$id', '==', documentId]] }
   );
   
-  // Create updated note document
-  const noteDocument = await platform.documents.create(
-    'tutorialContract.note',
-    identity,
-    {
-      '$id': documents[0].id, // Existing document id
-      '$revision': documents[0].revision, // Existing document revision
-      message: 'Updated document @ ' + new Date().toUTCString()
-    },
-  );
- 
-  const documentBatch = {
-    replace: [noteDocument],
-  }
+  // Update document
+  document.set('message', 'Updated document @ ' + new Date().toUTCString());
 
-  // Sign and submit the document(s)
-  return platform.documents.broadcast(documentBatch, identity);
-};
+  // Sign and submit the document replace transition
+  return platform.documents.broadcast({replace: [document]}, identity);
+}
 
 updateNoteDocument()
   .then(d => console.log('Document updated:\n', d))
