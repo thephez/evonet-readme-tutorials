@@ -7,9 +7,9 @@ async function connect() {
 }
 
 connect()
-  .then(d => console.log('Connected. Best block hash:\n', d))
-	.catch(e => console.error('Something went wrong:\n', e))
-	.finally(() => client.disconnect());
+  .then((d) => console.log('Connected. Best block hash:\n', d))
+  .catch((e) => console.error('Something went wrong:\n', e))
+  .finally(() => client.disconnect());
 
 module.exports = connect;
 
