@@ -12,8 +12,7 @@ const clientOpts = {
 const client = new Dash.Client(clientOpts);
 
 const createWallet = async () => {
-  const account = await client.wallet.getAccount();
-  await account.isReady();
+  const account = await client.getWalletAccount();
 
   const mnemonic = client.wallet.exportWallet();
   const address = account.getUnusedAddress();
