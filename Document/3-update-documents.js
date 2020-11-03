@@ -7,7 +7,7 @@ const clientOpts = {
   },
   apps: {
     tutorialContract: {
-      contractId: 'E18yBYfRLa4HiKgYevL6EEhVZ4HssBgGoiV8pwb1EaQb',
+      contractId: 'Q894cs83D8REQNo7mAetj1wPJK2W3svrwqaN61aP25W',
     },
   },
 };

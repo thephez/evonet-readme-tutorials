@@ -7,7 +7,7 @@ const clientOpts = {
   },
   apps: {
     tutorialContract: {
-      contractId: 'E18yBYfRLa4HiKgYevL6EEhVZ4HssBgGoiV8pwb1EaQb',
+      contractId: 'Q894cs83D8REQNo7mAetj1wPJK2W3svrwqaN61aP25W',
     },
   },
 };
@@ -32,3 +32,5 @@ deleteNoteDocument()
   .then((d) => console.log('Document deleted:\n', d))
   .catch((e) => console.error('Something went wrong:\n', e))
   .finally(() => client.disconnect());
+
+// Tutorial page: https://dashplatform.readme.io/docs/tutorial-delete-documents

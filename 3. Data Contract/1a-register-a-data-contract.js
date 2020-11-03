@@ -38,7 +38,7 @@ const registerContract = async () => {
 };
 
 registerContract()
-  .then((d) => console.log('Contract registered:\n', d))
+  .then((d) => console.log('Contract registered:\n', d.toJSON()))
   .catch((e) => console.error('Something went wrong:\n', e))
   .finally(() => client.disconnect());
 

@@ -9,8 +9,7 @@ const clientOpts = {
 const client = new Dash.Client(clientOpts);
 
 const sendFunds = async () => {
-  const account = await client.wallet.getAccount();
-  await account.isReady();
+  const account = await client.getWalletAccount();
 
   const transaction = account.createTransaction({
     recipient: 'yixnmigzC236WmTXp9SBZ42csyp9By6Hw8', // Evonet faucet
