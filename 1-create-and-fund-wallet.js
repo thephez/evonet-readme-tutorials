@@ -1,7 +1,7 @@
 const Dash = require('dash');
 
 const clientOpts = {
-  network: 'evonet',
+  network: 'testnet',
   wallet: {
     mnemonic: null, // this indicates that we want a new wallet to be generated
                     // if you want to get a new address for an existing wallet

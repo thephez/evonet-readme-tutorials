@@ -3,7 +3,7 @@ const Dash = require('dash');
 const clientOpts = {
   apps: {
     tutorialContract: {
-      contractId: 'Q894cs83D8REQNo7mAetj1wPJK2W3svrwqaN61aP25W',
+      contractId: '6Ti3c7nvD1gDf4gFi8a3FfZVhVLiRsGLnQ7nCAF74osi',
     },
   },
 };

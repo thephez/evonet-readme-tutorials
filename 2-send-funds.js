@@ -1,7 +1,7 @@
 const Dash = require('dash');
 
 const clientOpts = {
-  network: 'evonet',
+  network: 'testnet',
   wallet: {
     mnemonic: 'your wallet mnemonic goes here'
   },
