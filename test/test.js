@@ -13,13 +13,14 @@ describe('Tutorial Code Test', function suite() {
   });
 
   describe('1-create-and-fund-wallet.js', () => {
-    it('should create a wallet and get an unused address without error', async () => {
+    it('should create a wallet and get an unused address without error', async function () {
       const result = await CreateAndFundWallet();
       assert.ifError(result);
     });
+  });
 
 /*   describe('Document/2-retrieve-documents.js', () => {
-    it('should retrieve document(s) from Evonet without error', async () => {
+    it('should retrieve document(s) without error', async function () {
       const result = await RetrieveDocuments();
       assert.ifError(result);
     }).timeout(10000);
