@@ -1,28 +1,28 @@
-const ConnectToEvonet = require('../0-connecting-to-evonet')
-const CreateAndFundWallet = require('../1-create-and-fund-wallet')
-const RetrieveDocuments = require('../6-retrieve-documents')
+/* eslint-disable no-undef */
+const assert = require('assert');
+const ConnectToEvonet = require('../0-connecting-to-evonet');
+const CreateAndFundWallet = require('../1-create-and-fund-wallet');
+const RetrieveDocuments = require('../Document/2-retrieve-documents');
 
-var assert = require('assert');
-
-describe('Tutorial Code Test', function() {
-  describe('0-connecting-to-evonet.js', function() {
-    it('should connect to Evonet without error', async function() {
-      let result =  await ConnectToEvonet();
-      assert.ifError(result);
+describe('Tutorial Code Test', () => {
+  describe('0-connecting-to-evonet.js', () => {
+    it('should connect to Evonet without error', async () => {
+      const result = await ConnectToEvonet();
+      assert.ok(result);
     }).timeout(10000);
   });
 
-  describe('1-create-and-fund-wallet.js', function() {
-    it('should create a wallet and get an unused address without error', async function() {
-      let result =  await CreateAndFundWallet();
+/*   describe('1-create-and-fund-wallet.js', () => {
+    it('should create a wallet and get an unused address without error', async () => {
+      const result = await CreateAndFundWallet();
       assert.ifError(result);
     }).timeout(10000);
-  });
+  }); */
 
-  describe('6-retrieve-documents.js', function() {
-    it('should retrieve document(s) from Evonet without error', async function() {
-      let result =  await RetrieveDocuments();
+/*   describe('Document/2-retrieve-documents.js', () => {
+    it('should retrieve document(s) from Evonet without error', async () => {
+      const result = await RetrieveDocuments();
       assert.ifError(result);
     }).timeout(10000);
-  });
+  }); */
 });
