@@ -4,20 +4,19 @@ const ConnectToEvonet = require('../0-connecting-to-evonet');
 const CreateAndFundWallet = require('../1-create-and-fund-wallet');
 const RetrieveDocuments = require('../Document/2-retrieve-documents');
 
-describe('Tutorial Code Test', () => {
+describe('Tutorial Code Test', function suite() {
   describe('0-connecting-to-evonet.js', () => {
-    it('should connect to Evonet without error', async () => {
+    it('should connect to Evonet without error', async function () {
       const result = await ConnectToEvonet();
       assert.ok(result);
-    }).timeout(10000);
+    }).timeout(5000);
   });
 
-/*   describe('1-create-and-fund-wallet.js', () => {
+  describe('1-create-and-fund-wallet.js', () => {
     it('should create a wallet and get an unused address without error', async () => {
       const result = await CreateAndFundWallet();
       assert.ifError(result);
-    }).timeout(10000);
-  }); */
+    });
 
 /*   describe('Document/2-retrieve-documents.js', () => {
     it('should retrieve document(s) from Evonet without error', async () => {
